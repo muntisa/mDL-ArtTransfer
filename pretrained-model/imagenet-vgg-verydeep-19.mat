@@ -1,0 +1,6 @@
+Please replace this file with imagenet-vgg-verydeep-19.mat used by
+anishathalye:  https://github.com/anishathalye/neural-style
+ShafeenTejani: https://github.com/ShafeenTejani/style-transfer
+
+Pre-trained VGG network (MD5 8ee3263992981a1d26e73b3ca028a123):
+http://www.vlfeat.org/matconvnet/models/beta16/imagenet-vgg-verydeep-19.mat
