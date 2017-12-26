@@ -8,6 +8,12 @@ After the "Convolutional Neural Networks" course at Coursera (Deeplearning.ai sp
 3) anishathalye : https://github.com/anishathalye/neural-style
 4) ShafeenTejani: https://github.com/ShafeenTejani/style-transfer
 
-Due to the agreement to not use the practice code in any public repository, the Coursera scipts will have only my modifications. For using the entire code from Coursera you should graduate the course.
+NOTE: Due to the agreement to not use the practice code in any public repository, the Coursera scipts will have only my modifications. For using the entire code from Coursera you should graduate the course.
+
+AI Art Transfer: Content image + Style image & AI algorithm ==> Generated image
+
+I used 15 images as styles: the one used in other repository, my own paintings (10-years old), Romanian art and money and my ORCID QR code.
+
+![Style Images](images/mDL-ArtTransfer_styles.png)
 
 Still working, brb!
