@@ -35,16 +35,6 @@ In both cases, the script will used all the files in content and style folders. 
 
 The other parameters of the algorithms have default values. You can modify any of them inside the script.
 
-## Benchmark
-
-AI Art Transfer: 10 Content images + 15 Style images & 4 AI algorithms ==> 600 Generated images
-
-I used 15 images as style images (S): the one used in other repository, my own paintings (10-years old), Romanian art and money and my ORCID QR code.
-
-![Style Images](images/mDL-ArtTransfer_styles.png)
-
-As content, I included 10 content (C) pictures from the other repositories (Anishathalye-Sleeping-At-Hackathon, Dog, Dome, Lion, London, Louvre, Puppy, Stata-Center-MIT) and two personal pictures ("Muntisa in Galicia" and "Galician Wild Horses"). All the input files have different dimentions.
-
 Only 200 interations have been used to train each algorithm with the other parameters with default values. If you didn't graduated the course, you should disable the first algorithm:
 
 `# (1) Run Coursera's AI (https://www.deeplearning.ai/)`
@@ -64,7 +54,19 @@ Only 200 interations have been used to train each algorithm with the other param
 `##os.system(sCmd)`
 
 `##print("... Execution time for (1): %s seconds" % (time.time() - time_AI1))`
-		
+
+## Benchmark
+
+AI Art Transfer: 10 Content images + 15 Style images & 4 AI algorithms ==> 600 Generated images
+
+I used 15 images as style images (S): the one used in other repository, my own paintings (10-years old), Romanian art and money and my ORCID QR code.
+
+![Style Images](images/mDL-ArtTransfer_styles.png)
+
+As content, I included 10 content (C) pictures from the other repositories (Anishathalye-Sleeping-At-Hackathon, Dog, Dome, Lion, London, Louvre, Puppy, Stata-Center-MIT) and two personal pictures ("Muntisa in Galicia" and "Galician Wild Horses"). All the input files have different dimentions.
+
+![Content Images](images/mDL-ArtTransfer_contents.png)
+
 Coursera's Art Transfer
 -----------------------
 
