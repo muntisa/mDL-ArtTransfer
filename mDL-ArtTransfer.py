@@ -6,7 +6,7 @@
 # - the number of iterations are the same for all the AIs
 # Note: generated images (outputs) will have composed names as [content_name]_[style_name]_[iterations].jpg
 
-import os, time
+import os, time, argparse
 
 # set starting time
 start_time = time.time()
@@ -25,15 +25,23 @@ mDLArtTransfer: Deep Learning Art Transfer using Multiple AIs (by muntisa)
 # ====================================================
 # PARAMETERS
 # ====================================================
-# please set the content, style and output folders 
-ContentFolder   = "contents"  # folder with initial photos
-StyleFolder     = "styles"    # folder with styles to use to modify initial photos
-GeneratedFolder = "outputs"   # folder with generated photo by mixind content and style using AI art transfer
+# Setup to receive command line arguments
+parser = argparse.ArgumentParser(description='mDLArtTransfer: Deep Learning Art Transfer using Multiple AIs (by muntisa)')
+parser.add_argument('--content_folder', metavar='content_folder', type=str, help='Folder with content images to transform.', default='contents')
+parser.add_argument('--style_folder',   metavar='style_folder',   type=str, help='Folder with style images to use.', default='styles')
+parser.add_argument('--output_folder',  metavar='output_folder',  type=str, help='Folder to store the generated image.', default='outputs')
+parser.add_argument('--iterations', help='Set the number of iterations to run the optimizer for.', type=int, default=200)
 
-# please set the iterations
-iter = 200  # number of iterations for all the AI scripts (1000 = default for anishathalye's AI)
+# Parse command line arguments
+args = parser.parse_args()
+ContentFolder = args.content_folder
+StyleFolder = args.style_folder
+GeneratedFolder = args.output_folder
+# number of iterations for all the AI scripts (1000 = default for anishathalye's AI)
+iter = args.iterations
+# -------------------------------------------------------
 
-# Set the lists with files
+# Set the lists with files (default will get all the files in the folders!)
 ContentFileList  = os.listdir(ContentFolder) # get all files in content folder
 # ContentFileList = ["dog.jpg","dome.jpg","lion.jpg","london.jpg","puppy.jpg"] # use a specific list
 StyleFileList    = os.listdir(StyleFolder)   # get all files in style folder
@@ -60,7 +68,7 @@ for iContentFile in ContentFileList:
 		i+=1
 		print "\n\n---> Running (1) - ", i, "from", n, ":",  sCmd
 		time_AI1 = time.time()
-		os.system(sCmd);
+		os.system(sCmd)
 		print("... Execution time for (1): %s seconds" % (time.time() - time_AI1))
 		
 		# (2) Run fchollet's AI (https://github.com/keras-team/keras/blob/master/examples/neural_style_transfer.py)
@@ -69,7 +77,7 @@ for iContentFile in ContentFileList:
 		i+=1
 		print "\n\n---> Running (2) - ", i, "from", n, ":",  sCmd
 		time_AI2 = time.time()
-		os.system(sCmd);
+		os.system(sCmd)
 		print("... Execution time for (2): %s seconds" % (time.time() - time_AI2))
 		
 		# (3) Run anishathalye's AI (https://github.com/anishathalye/neural-style)
@@ -78,7 +86,7 @@ for iContentFile in ContentFileList:
 		i+=1
 		print "\n\n---> Running (3) - ", i, "from", n, ":",  sCmd
 		time_AI3 = time.time()
-		os.system(sCmd);
+		os.system(sCmd)
 		print("... Execution time for (3): %s seconds" % (time.time() - time_AI3))
 		
 		# (4) Run ShafeenTejani's AI (https://github.com/ShafeenTejani/style-transfer)
@@ -88,7 +96,7 @@ for iContentFile in ContentFileList:
 		i+=1
 		print "\n\n---> Running (4) - ", i, "from", n, ":",  sCmd
 		time_AI4 = time.time()
-		os.system(sCmd);
+		os.system(sCmd)
 		print("... Execution time (4): %s seconds" % (time.time() - time_AI4))
 
 print("\n\nTotal Execution time of mDLArtTransfer: %s seconds" % (time.time() - start_time))
