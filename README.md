@@ -43,7 +43,7 @@ I used 15 images as style images (S): the one used in other repository, my own p
 
 ![Style Images](images/mDL-ArtTransfer_styles.png)
 
-As content, I included 10 content (C) pictures from the other repositories (Anishathalye-Sleeping-At-Hackathon, Dog, Dome, Lion, London, Louvre, Puppy, Stata-Center-MIT) and two personal pictures ("Muntisa in Galicia" and "Galician Wild Horses").
+As content, I included 10 content (C) pictures from the other repositories (Anishathalye-Sleeping-At-Hackathon, Dog, Dome, Lion, London, Louvre, Puppy, Stata-Center-MIT) and two personal pictures ("Muntisa in Galicia" and "Galician Wild Horses"). All the input files have different dimentions.
 
 Only 200 interations have been used to train each algorithm with the other parameters with default values. If you didn't graduated the course, you should disable the first algorithm:
 
@@ -66,35 +66,49 @@ Only 200 interations have been used to train each algorithm with the other param
 `##print("... Execution time for (1): %s seconds" % (time.time() - time_AI1))`
 		
 Coursera's Art Transfer
----------------------
+-----------------------
 
+* Implemented with Tensorflow
+* Adam optimization
+* Content layer = 'conv4_2'
+* Style layers  = 'conv1_1', 'conv2_1', 'conv3_1', 'conv4_1', 'conv5_1' (equal weights = 0.2 = 1/5)
+* Weight of content loss = 10, weight of style loss = 40 (default values)
 * Input redimention: added because of the limitations of using only 300 by 400 px as inputs; for other dimentions the initial code will stop.
 * PNG transparent backgound: the current code can not process the extra dimension.
 
 fchollet's Art Transfer
----------------------
+-----------------------
 
-* Optimization with L-BFGS (not Adam!)
 * Implemented with Keras
+* L-BFGS optimization (not Adam!)
+* Content layers = 'block5_conv2'
+* Style layers   = 'block1_conv1', 'block2_conv1', 'block3_conv1', 'block4_conv1', 'block5_conv1'
+* Weight of content loss = 0.025, weight of style loss = 1.0 (default values)
 * It can process PNG with transparent background
 * It can use any dimention (no need of redimention)
 
 anishathalye's Art Transfer
----------------------
+---------------------------
 
-* Optimization with Adam
 * Implemented in Tensorflow
-* CONTENT_LAYERS = ('relu4_2', 'relu5_2')
-* STYLE_LAYERS   = ('relu1_1', 'relu2_1', 'relu3_1', 'relu4_1', 'relu5_1')
+* Adam optimization
+* Content layers = 'relu4_2', 'relu5_2'
+* Style layers   = 'relu1_1', 'relu2_1', 'relu3_1', 'relu4_1', 'relu5_1'
+* Weight of content loss = 5e0, weight of style loss = 5e2 (default values)
 * It is able to mix different styles
 * You can keep original colors using grey-scale conversion
 * Generated image saved as PNG
 
 ShafeenTejani's Art Transfer
----------------------
+----------------------------
 
+* Implemented in Tensorflow
+* Adam optimization
 * CONTENT_LAYER = 'relu4_2'
 * STYLE_LAYERS = ('relu1_1', 'relu2_1', 'relu3_1', 'relu4_1', 'relu5_1')
+* Weight of content loss = 5e1, weight of style loss = 1e2 (default values)
+
+The generated images show different results due to several factors: optimization type, weights of content and style loss, layers used for content and style components and initial generated image.
 
 ## Acknowledgements
 
