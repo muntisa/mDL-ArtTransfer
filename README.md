@@ -1,5 +1,6 @@
 # mDL-ArtTransfer
 Deep Learning Art Transfer using Multiple AIs
+---------------------------------------------
 
 After the "Convolutional Neural Networks" course at Coursera (Deeplearning.ai specialization) I compared the script from Week4: Face recognition and Neural style transfer, practice Neural Style Transfer with other three algorithms for the same task. Therefore, this git is a benchmark of AI Art Transfer results usinng default parameters using four sources:
 
@@ -9,6 +10,14 @@ After the "Convolutional Neural Networks" course at Coursera (Deeplearning.ai sp
 4) ShafeenTejani: https://github.com/ShafeenTejani/style-transfer
 
 NOTE: Due to the agreement to not use the practice code in any public repository, the Coursera scipts will have only my modifications. For using the entire code from Coursera you should graduate the course.
+
+## Running
+
+`python mDL-ArtTransfer.py`
+
+All the parameters such as content, style, output, iterations can be modified inside the script.
+
+## Benchmark
 
 AI Art Transfer: 10 Content images + 15 Style images & 4 AI algorithms ==> 600 Generated images
 
