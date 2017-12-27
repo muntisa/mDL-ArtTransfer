@@ -24,9 +24,13 @@ With yout parameters:
 In both cases, the script will used all the files in content and style folders. In order to use only a specific list of files in these folders, you can modify the script:
 
 `# Set the lists with files (default will get all the files in the folders!)`
+
 `####ContentFileList  = os.listdir(ContentFolder) # get all files in content folder`
+
 `ContentFileList = ["dog.jpg","dome.jpg","lion.jpg","london.jpg","puppy.jpg"] # use a specific list`
+
 `####StyleFileList    = os.listdir(StyleFolder)   # get all files in style folder`
+
 `StyleFileList = ["dora-maar-picasso.jpg","rain-princess-aframov.jpg","starry-night-van-gogh.jpg"] # use a specific list`
 
 The other parameters of the algorithms have default values. You can modify any of them inside the script.
@@ -44,13 +48,21 @@ As content, I included 10 content (C) pictures from the other repositories (Anis
 Only 200 interations have been used to train each algorithm with the other parameters with default values. If you didn't graduated the course, you should disable the first algorithm:
 
 `# (1) Run Coursera's AI (https://www.deeplearning.ai/)`
+
 `# !!! if you didn't finish the course, you could disable the next 7 lines !!!`
+
 `##sOutputFile  = os.path.join(GeneratedFolder, iContentFile[:-4]+"_"+iStyleFile[:-4]+"_Coursera_"+str(iter)+".jpg") # join path with filename for style`
+
 `##sCmd = "python Coursera_ArtTransfer.py "+sContentFile+" "+sStyleFile+" --output_image "+sOutputFile+" --iterations "+str(iter)`
+
 `##i+=1`
+
 `##print "\n\n---> Running (1) - ", i, "from", n, ":",  sCmd`
+
 `##time_AI1 = time.time()`
+
 `##os.system(sCmd)`
+
 `##print("... Execution time for (1): %s seconds" % (time.time() - time_AI1))`
 		
 Coursera's Art Transfer
