@@ -67,6 +67,10 @@ As content, I included 10 content (C) pictures from the other repositories (Anis
 
 ![Content Images](images/mDL-ArtTransfer_contents.png)
 
+Let's see some generated images! First example is about "Dog" containt and "Flower-muntisa" style. The 4 generated images correspondes to the 4 AI scripts. I think that Coursera script is maintaining details from the containt images more than the fchollet generated image (200 iterations only). Opposite, fchollet's AI is able to include a more abstract style.
+
+![Output Dog Muntisa Flowers](images/mDL-ArtTransfer_Dog_Flowers-muntisa.png)
+
 Coursera's Art Transfer
 -----------------------
 
