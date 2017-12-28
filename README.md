@@ -121,6 +121,10 @@ Let's see some generated images! First example is about "Dog" containt and "Flow
 
 ![Output Dog Muntisa Flowers](images/mDL-ArtTransfer_Dog_Flowers-muntisa.png)
 
+For other mixture of content and style images such as Dome with Starry Night by Van Gogh, ShafeenTejani's AI maintains the content details but fcholllet's AI is implementing the most accurate style.
+
+![Output Dome Starry Night Van Gogh](images/mDL-ArtTransfer_dome-Van-Gogh.png)
+
 An extreme example of art transfer is using a QR code as style. The Stat Center MIT content shows that Coursera's and fchollet's AIs are able to maintain relativelly accurate the shape of the building. Opposite, the other 2 AIs are loosing the containt.
 
 ![Output Stata center MIT muntisa orcid qrcode](images/mDL-ArtTransfer_qr_code.png)
