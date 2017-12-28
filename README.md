@@ -13,11 +13,13 @@ NOTE: Due to the agreement to not use the practice code in any public repository
 
 ## Running
 
-With the default parameters ( --content_folder='contents', --style_folder='styles', --output_folder='outputs', --iterations=200):
+Using the default parameters ( --content_folder='contents', --style_folder='styles', --output_folder='outputs', --iterations=200), mDL-ArtTransfer will get as inputs all the files from contents and styles folders and it will make all the pairs content-style to produce a combined image in the outputs folder, for each algorithm. 
+
+GENERATED images (outputs) = CONTENT images x STYLE images x 4 algorithms 
 
 `python mDL-ArtTransfer.py`
 
-With yout parameters:
+Using your parameters:
 
 `python mDL-ArtTransfer.py --content_folder <content folder> --style_folder <style folder> --output_folder <output folder> --iterations <number of iterations>`
 
@@ -56,20 +58,6 @@ Only 200 interations have been used to train each algorithm with the other param
 `##print("... Execution time for (1): %s seconds" % (time.time() - time_AI1))`
 
 ## Benchmark
-
-AI Art Transfer: 10 Content images + 15 Style images & 4 AI algorithms ==> 600 Generated images
-
-I used 15 images as style images (S): the one used in other repository, my own paintings (10-years old), Romanian art and money and my ORCID QR code.
-
-![Style Images](images/mDL-ArtTransfer_styles.png)
-
-As content, I included 10 content (C) pictures from the other repositories (Anishathalye-Sleeping-At-Hackathon, Dog, Dome, Lion, London, Louvre, Puppy, Stata-Center-MIT) and two personal pictures ("Muntisa in Galicia" and "Galician Wild Horses"). All the input files have different dimentions.
-
-![Content Images](images/mDL-ArtTransfer_contents.png)
-
-Let's see some generated images! First example is about "Dog" containt and "Flower-muntisa" style. The 4 generated images correspondes to the 4 AI scripts. I think that Coursera script is maintaining details from the containt images more than the fchollet generated image (200 iterations only). Opposite, fchollet's AI is able to include a more abstract style.
-
-![Output Dog Muntisa Flowers](images/mDL-ArtTransfer_Dog_Flowers-muntisa.png)
 
 Coursera's Art Transfer
 -----------------------
@@ -115,6 +103,32 @@ ShafeenTejani's Art Transfer
 * Weight of content loss = 5e1, weight of style loss = 1e2 (default values)
 
 The generated images show different results due to several factors: optimization type, weights of content and style loss, layers used for content and style components and initial generated image.
+
+Generated images
+----------------
+
+AI Art Transfer: 10 Content images + 15 Style images & 4 AI algorithms ==> 600 Generated images
+
+I used 15 images as style images (S): the one used in other repository, my own paintings (10-years old), Romanian art and money and my ORCID QR code.
+
+![Style Images](images/mDL-ArtTransfer_styles.png)
+
+As content, I included 10 content (C) pictures from the other repositories (Anishathalye-Sleeping-At-Hackathon, Dog, Dome, Lion, London, Louvre, Puppy, Stata-Center-MIT) and two personal pictures ("Muntisa in Galicia" and "Galician Wild Horses"). All the input files have different dimentions.
+
+![Content Images](images/mDL-ArtTransfer_contents.png)
+
+Let's see some generated images! First example is about "Dog" containt and "Flower-muntisa" style. The 4 generated images correspondes to the 4 AI scripts. I think that Coursera script is maintaining details from the containt images more than the fchollet generated image (200 iterations only). Opposite, fchollet's AI is able to include a more abstract style.
+
+![Output Dog Muntisa Flowers](images/mDL-ArtTransfer_Dog_Flowers-muntisa.png)
+
+An extreme example of art transfer is using a QR code as style. The Stat Center MIT content shows that Coursera's and fchollet's AIs are able to maintain relativelly accurate the shape of the building. Opposite, the other 2 AIs are loosing the containt.
+
+![Output Stata center MIT muntisa orcid qrcode](images/mDL-ArtTransfer_qr_code.png)
+
+## Next
+
+* Add content and style weights parameters to mDL-ArtTransfer
+* Add collage of multiple generated images by style, content, etc.
 
 ## Acknowledgements
 
