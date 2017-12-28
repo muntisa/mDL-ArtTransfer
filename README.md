@@ -129,15 +129,25 @@ An extreme example of art transfer is using a QR code as style. The Stat Center 
 
 ![Output Stata center MIT muntisa orcid qrcode](images/mDL-ArtTransfer_qr_code.png)
 
+Next generated images represent a personal selection with different outputs obtained with syles such as Chat noir, Flowers by muntisa, Starry night by Van Gogh, Wave off Kanagawa, Preparatory design by Klimt, and Monet.
+
+![Output Selection](images/mDL-ArtTransfer_selection.png)
+
+I will end the examples with my own content & style art transfer.
+
+![Output muntisa](outputs/Muntisa_In_Galicia_Muntisa-flowers_fchollet_200.png)
+
 ## Next
 
-* Add content and style weights parameters to mDL-ArtTransfer
+* Add content and style weights parameters to mDL-ArtTransfer (mDL-ArtTransfer should be able compare the AIs with almost the same parameters, not only the default ones)
 * Add collage of multiple generated images by style, content, etc.
 
 ## Acknowledgements
 
-* Andrew Ng and the team of [Deeplearning.ai at Coursera] (https://www.coursera.org/learn/convolutional-neural-networks)
-* Ana Porto @anaportop and Fran Cedron @flanciskinho, two researchers in artificial neural networks at University of A Coruna (Spain)
+* Andrew Ng and the team of [Deeplearning.ai at Coursera] (https://www.coursera.org/learn/convolutional-neural-networks) - for the detailed specialization in Deep Learning
+* Lucas Pastur Romay, ex-data scientist at University of A Coruna - for directing me to the Deeplearning.ai specialization
+* Ana Porto @anaportop and Fran Cedron @flanciskinho, researchers in artificial neural networks at University of A Coruna, Spain - for the computer power and administration help
 * NVIDIA for the [GPU Nvidia Titan X (Pascal)](https://www.nvidia.com/en-us/titan/titan-xp/)
+* Sorin-Cristian Cheran from Hewlett Packard Enterprise - for the Workshop in DL at CESGA (Galicia, Spain) with the collaboration of NVIDIA Deep Learning Institute 
 
-Still working, brb!
+Enjoy the repo! Have a nice DL experience!
