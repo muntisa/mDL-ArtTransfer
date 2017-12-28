@@ -144,7 +144,7 @@ I will end the examples with my own content & style art transfer.
 
 ## Acknowledgements
 
-* Andrew Ng and the team of [Deeplearning.ai at Coursera] (https://www.coursera.org/learn/convolutional-neural-networks) - for the detailed specialization in Deep Learning
+* Andrew Ng and the team of Deeplearning.ai at Coursera (https://www.coursera.org/learn/convolutional-neural-networks) - for the detailed specialization in Deep Learning
 * Lucas Pastur Romay, ex-data scientist at University of A Coruna - for directing me to the Deeplearning.ai specialization
 * Ana Porto @anaportop and Fran Cedron @flanciskinho, researchers in artificial neural networks at University of A Coruna, Spain - for the computer power and administration help
 * NVIDIA for the [GPU Nvidia Titan X (Pascal)](https://www.nvidia.com/en-us/titan/titan-xp/)
