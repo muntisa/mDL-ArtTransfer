@@ -21,19 +21,13 @@ GENERATED images (outputs) = CONTENT images x STYLE images x 4 algorithms
 
 Using your parameters:
 
-`python mDL-ArtTransfer.py --content_folder <content folder> --style_folder <style folder> --output_folder <output folder> --iterations <number of iterations>`
+`python mDL-ArtTransfer.py --content_folder <content folder> --style_folder <style folder> --output_folder <output folder> --iterations <#iterations>`
 
-In both cases, the script will used all the files in content and style folders. In order to use only a specific list of files in these folders, you can modify the script:
+In both cases, the script will used all the files in content and style folders. In order to use only a specific list of files in these folders, you should enable the custom ContentFileList and StyleFileList lists:
 
-`# Set the lists with files (default will get all the files in the folders!)`
+`ContentFileList = ["dog.jpg","dome.jpg","lion.jpg","london.jpg","puppy.jpg"]`
 
-`####ContentFileList  = os.listdir(ContentFolder) # get all files in content folder`
-
-`ContentFileList = ["dog.jpg","dome.jpg","lion.jpg","london.jpg","puppy.jpg"] # use a specific list`
-
-`####StyleFileList    = os.listdir(StyleFolder)   # get all files in style folder`
-
-`StyleFileList = ["dora-maar-picasso.jpg","rain-princess-aframov.jpg","starry-night-van-gogh.jpg"] # use a specific list`
+`StyleFileList = ["dora-maar-picasso.jpg","rain-princess-aframov.jpg","starry-night-van-gogh.jpg"]`
 
 The other parameters of the algorithms have default values. You can modify any of them inside the script.
 
@@ -41,17 +35,7 @@ Only 200 interations have been used to train each algorithm with the other param
 
 `# (1) Run Coursera's AI (https://www.deeplearning.ai/)`
 
-`# !!! if you didn't finish the course, you could disable the next 7 lines !!!`
-
-`##sOutputFile  = os.path.join(GeneratedFolder, iContentFile[:-4]+"_"+iStyleFile[:-4]+"_Coursera_"+str(iter)+".jpg") # join path with filename for style`
-
-`##sCmd = "python Coursera_ArtTransfer.py "+sContentFile+" "+sStyleFile+" --output_image "+sOutputFile+" --iterations "+str(iter)`
-
-`##i+=1`
-
-`##print "\n\n---> Running (1) - ", i, "from", n, ":",  sCmd`
-
-`##time_AI1 = time.time()`
+`......`
 
 `##os.system(sCmd)`
 
@@ -133,7 +117,18 @@ Next generated images represent a personal selection with different outputs obta
 
 ![Output Selection](images/mDL-ArtTransfer_selection.png)
 
-I will end the examples with my own content & style art transfer.
+Transparent backgound (PNG)
+---------------------------
+
+Not all the art transfer AIs in this package are dealing with the other dimention of the image: the transparency in PNG files. The ´best AI is the one of fchollet. Still there are different shape interpretation with PNG transparent background (squared shape) and JPG blank colour background. The next slide is presenting the fchollet's AI interpretation using melatonine molecule as content input, Dora Maar - Picasso as style input (10-20 iterations). The background has a similar colour in both cases.
+
+![Output melatonine](images/mDL-ArtTransfer_melatonine.png)
+
+In the case of an autumn leaf with transparent background (PNG) the same algorithm of fchollet is filling the background with different colours.
+
+![Output leaf](images/mDL-ArtTransfer_leaf.png)
+
+I will end the examples with my own content & style art transfer (muntisa in Galicia + Flowers by muntisa). See my 10-year-old art at [My Art album](https://flic.kr/s/aHsktKxmoS).
 
 ![Output muntisa](outputs/Muntisa_In_Galicia_Muntisa-flowers_fchollet_200.png)
 
