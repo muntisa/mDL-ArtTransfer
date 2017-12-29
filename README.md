@@ -134,8 +134,9 @@ I will end the examples with my own content & style art transfer (muntisa in Gal
 
 ## Next
 
-* Add content and style weights parameters to mDL-ArtTransfer (mDL-ArtTransfer should be able compare the AIs with almost the same parameters, not only the default ones)
-* Add collage of multiple generated images by style, content, etc.
+* Content and style weights parameters for mDL-ArtTransfer (mDL-ArtTransfer should be able compare the AIs with almost the same parameters, not only the default ones)
+* Collage of multiple generated images by style, content, etc.
+* Complexity and artistic style estimation of the generated images 
 
 ## Acknowledgements
 
