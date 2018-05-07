@@ -2,20 +2,17 @@
 Deep Learning Art Transfer using Multiple AIs
 ---------------------------------------------
 
-After the "Convolutional Neural Networks" course at Coursera (Deeplearning.ai specialization) I compared the script from Week4: Face recognition and Neural style transfer, practice Neural Style Transfer with other three algorithms for the same task. Therefore, this git is a benchmark of AI Art Transfer results usinng default parameters using four sources:
+This git is a mix of adapted script:
 
-1) Coursera     : https://www.coursera.org/learn/convolutional-neural-networks
-2) fchollet     : https://github.com/keras-team/keras/blob/master/examples/neural_style_transfer.py
-3) anishathalye : https://github.com/anishathalye/neural-style
-4) ShafeenTejani: https://github.com/ShafeenTejani/style-transfer
-
-NOTE: Due to the agreement to not use the practice code in any public repository, the Coursera scipts will have only my modifications. For using the entire code from Coursera you should graduate the course.
+1) fchollet     : https://github.com/keras-team/keras/blob/master/examples/neural_style_transfer.py
+2) anishathalye : https://github.com/anishathalye/neural-style
+3) ShafeenTejani: https://github.com/ShafeenTejani/style-transfer
 
 ## Running
 
 Using the default parameters ( --content_folder='contents', --style_folder='styles', --output_folder='outputs', --iterations=200), mDL-ArtTransfer will get as inputs all the files from contents and styles folders and it will make all the pairs content-style to produce a combined image in the outputs folder, for each algorithm. 
 
-GENERATED images (outputs) = CONTENT images x STYLE images x 4 algorithms 
+GENERATED images (outputs) = CONTENT images x STYLE images x 3 algorithms 
 
 `python mDL-ArtTransfer.py`
 
@@ -31,28 +28,9 @@ In both cases, the script will used all the files in content and style folders. 
 
 The other parameters of the algorithms have default values. You can modify any of them inside the script.
 
-Only 200 interations have been used to train each algorithm with the other parameters with default values. If you didn't graduated the course, you should disable the first algorithm:
+Only 200 interations have been used to train each algorithm with the other parameters with default values.
 
-`# (1) Run Coursera's AI (https://www.deeplearning.ai/)`
-
-`......`
-
-`##os.system(sCmd)`
-
-`##print("... Execution time for (1): %s seconds" % (time.time() - time_AI1))`
-
-## Benchmark
-
-Coursera's Art Transfer
------------------------
-
-* Implemented with Tensorflow
-* Adam optimization
-* Content layer = 'conv4_2'
-* Style layers  = 'conv1_1', 'conv2_1', 'conv3_1', 'conv4_1', 'conv5_1' (equal weights = 0.2 = 1/5)
-* Weight of content loss = 10, weight of style loss = 40 (default values)
-* Input redimention: added because of the limitations of using only 300 by 400 px as inputs; for other dimentions the initial code will stop.
-* PNG transparent backgound: the current code can not process the extra dimension.
+## AI comparison
 
 fchollet's Art Transfer
 -----------------------
@@ -91,7 +69,7 @@ The generated images show different results due to several factors: optimization
 Generated images
 ----------------
 
-AI Art Transfer: 10 Content images + 15 Style images & 4 AI algorithms ==> 600 Generated images
+AI Art Transfer: 10 Content images + 15 Style images & 3 AI algorithms ==> 450 Generated images
 
 I used 15 images as style images (S): the one used in other repository, my own paintings (10-years old), Romanian art and money and my ORCID QR code.
 
@@ -101,7 +79,7 @@ As content, I included 10 content (C) pictures from the other repositories (Anis
 
 ![Content Images](images/mDL-ArtTransfer_contents.png)
 
-Let's see some generated images! First example is about "Dog" containt and "Flower-muntisa" style. The 4 generated images correspondes to the 4 AI scripts. I think that Coursera script is maintaining details from the containt images more than the fchollet generated image (200 iterations only). Opposite, fchollet's AI is able to include a more abstract style.
+Let's see some generated images! First example is about "Dog" containt and "Flower-muntisa" style. The 3 generated images correspondes to the 3 AI scripts. I think that fchollet's AI is able to include a more abstract style.
 
 ![Output Dog Muntisa Flowers](images/mDL-ArtTransfer_Dog_Flowers-muntisa.png)
 
@@ -109,7 +87,7 @@ For other mixture of content and style images such as Dome with Starry Night by 
 
 ![Output Dome Starry Night Van Gogh](images/mDL-ArtTransfer_dome-Van-Gogh.png)
 
-An extreme example of art transfer is using a QR code as style. The Stat Center MIT content shows that Coursera's and fchollet's AIs are able to maintain relativelly accurate the shape of the building. Opposite, the other 2 AIs are loosing the containt.
+An extreme example of art transfer is using a QR code as style. The Stat Center MIT content shows that fchollet's AI is able to maintain relativelly accurate the shape of the building. Opposite, the other 2 AIs are loosing the content.
 
 ![Output Stata center MIT muntisa orcid qrcode](images/mDL-ArtTransfer_qr_code.png)
 
